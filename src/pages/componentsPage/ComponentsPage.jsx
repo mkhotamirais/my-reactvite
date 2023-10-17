@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 
 const ComponentsPage = () => {
   const isShow = useSelector((state) => state.aside.value);
-
+  useEffect(() => {
+    console.log(isShow);
+  }, []);
   return (
     <>
       <aside
