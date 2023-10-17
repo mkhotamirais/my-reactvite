@@ -7,25 +7,25 @@ import { hideAside, showAside } from "./features/asideSlice";
 import { useEffect } from "react";
 
 const App = () => {
-  const isShow = useSelector((state) => state.aside.value);
+  // const isShow = useSelector((state) => state.aside.value);
   const dispatch = useDispatch();
   function asideShow() {
     dispatch(showAside());
   }
   useEffect(() => {
-    if (isShow) {
-      window.addEventListener("scroll", () => {
+    // if (isShow) {
+    window.addEventListener("scroll", () => {
+      dispatch(hideAside());
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target.id && e.target.id == "showAside") {
+        dispatch(showAside());
+      } else {
         dispatch(hideAside());
-      });
-      window.addEventListener("click", (e) => {
-        if (e.target.id && e.target.id == "showAside") {
-          dispatch(showAside());
-        } else {
-          dispatch(hideAside());
-        }
-      });
-    }
-  }, [dispatch, isShow]);
+      }
+    });
+    // }
+  }, [dispatch]);
   return (
     <>
       <ScrollRestoration />
