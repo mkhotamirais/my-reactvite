@@ -16,3 +16,7 @@ header .nav-link {
 aside .aside-link {
   @apply border-b rounded px-2 py-1 hover:bg-blue-500 hover:text-white;
 }
+
+aside .aside-link.active {
+  @apply bg-blue-500 text-white;
+}
