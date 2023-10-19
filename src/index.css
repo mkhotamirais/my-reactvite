@@ -7,7 +7,11 @@ main {
 }
 
 aside {
+  @apply z-50 border-r sm:border-none bg-white fixed left-0 sm:sticky top-16 hidden sm:block min-h-screen w-3/4 sm:w-1/4 px-2 sm:px-0 md:pr-2 pt-4 sm:float-left;
   min-height: calc(100vh - 4rem);
+}
+aside.show {
+  @apply block;
 }
 header .nav-link {
   @apply border-b sm:border-none font-semibold capitalize h-12 sm:h-16 px-4 flex items-center hover:text-slate-500;
@@ -19,4 +23,26 @@ aside .aside-link {
 
 aside .aside-link.active {
   @apply bg-blue-500 text-white;
+}
+
+.pag .btn-pag {
+  @apply disabled:opacity-50 border px-2 hover:bg-blue-500;
+}
+
+.pag .btn-pag.active {
+  @apply bg-blue-500;
+}
+
+#pagination2 button.active {
+  @apply bg-blue-500;
+}
+
+#pagination3 button.btn-num {
+  @apply border px-2 hover:bg-blue-500;
+}
+#pagination3 button.btn-prevnext {
+  @apply border px-2 hover:bg-slate-100;
+}
+#pagination3 button.active {
+  @apply bg-blue-500;
 }

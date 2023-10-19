@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { data } from "../accordionData.js";
+import { data } from "../dataAccordion.js";
 const Accordion1 = () => {
   const [selected, setSelected] = useState(null);
   function openContent(i) {
@@ -14,10 +14,10 @@ const Accordion1 = () => {
       {data.map(({ title, content }, i) => (
         <div key={i}>
           <div onClick={() => openContent(i)} className="border-b w-full cursor-pointer flex justify-between items-center">
-            <h3 className="capitalize">{title}</h3>
+            <h3 className="capitalize font-semibold">{title}</h3>
             <span>{selected === i ? "-" : "+"}</span>
           </div>
-          <p className={`${selected === i ? "h-24" : "h-0"} overflow-hidden text-base transition-all duration-500`}>
+          <p className={`${selected === i ? "h-auto" : "h-0"} overflow-hidden text-base transition-all duration-500`}>
             {content}
           </p>
         </div>

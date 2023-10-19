@@ -43,7 +43,7 @@ const Header = () => {
       <ul
         ref={navref}
         className={`transition-all duration-300 z-50 overflow-hidden ${
-          isOpenbar ? "h-[96px]" : "h-0"
+          isOpenbar ? "h-[144px]" : "h-0"
         } sm:h-auto border-b sm:border-none sm:flex absolute top-16 left-0 right-0 sm:static bg-white sm:bg-transparent`}
       >
         <li className="nav-list">
@@ -54,6 +54,11 @@ const Header = () => {
         <li className="nav-list">
           <NavLink onClick={changeBar} to="/components" className={"nav-link"}>
             compoenents
+          </NavLink>
+        </li>
+        <li className="nav-list">
+          <NavLink onClick={changeBar} to="/redux" className={"nav-link"}>
+            redux
           </NavLink>
         </li>
       </ul>
